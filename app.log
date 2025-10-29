@@ -1,0 +1,39 @@
+ERROR:root:Database connection failed: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+ERROR:root:Database connection failed: connection to server at "localhost" (::1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+connection to server at "localhost" (127.0.0.1), port 5432 failed: Connection refused (0x0000274D/10061)
+	Is the server running on that host and accepting TCP/IP connections?
+
+INFO:root:GET /docs status=200 time=0.000s
+INFO:root:GET /openapi.json status=200 time=0.016s
+INFO:root:GET / status=404 time=0.000s
+INFO:root:GET / status=200 time=0.001s
+INFO:root:GET /docs status=200 time=0.001s
+INFO:root:GET /openapi.json status=200 time=0.010s
+2025-10-28 20:35:30,680 - INFO - GET /docs status=200 time=0.001s
+2025-10-28 20:35:30,920 - INFO - GET /openapi.json status=200 time=0.029s
+2025-10-28 20:35:40,133 - INFO - GET /earthquakes/ status=200 time=0.259s
+2025-10-28 20:35:53,679 - INFO - GET /earthquakes/ status=200 time=0.089s
+2025-10-28 20:35:59,825 - INFO - GET /earthquakes/ status=200 time=0.074s
+2025-10-28 22:17:48,204 - INFO - GET /docs status=200 time=0.000s
+2025-10-28 22:17:48,475 - INFO - GET /openapi.json status=200 time=0.030s
+2025-10-28 22:17:52,849 - INFO - GET /earthquakes/ status=200 time=0.266s
+2025-10-28 22:18:07,336 - INFO - GET /earthquakes/ status=200 time=0.075s
+2025-10-28 22:18:11,377 - INFO - GET /earthquakes/ status=200 time=0.077s
+2025-10-28 22:30:46,310 - INFO - GET /earthquakes/ status=200 time=0.090s
+2025-10-28 22:30:50,805 - INFO - GET /earthquakes/ status=200 time=0.180s
+2025-10-28 22:58:23,091 - INFO - GET /earthquakes/ status=200 time=0.120s
+2025-10-28 22:58:29,612 - INFO - GET /earthquakes/ status=200 time=0.188s
+2025-10-28 22:58:43,093 - INFO - GET /earthquakes/ status=200 time=0.080s
+2025-10-28 23:00:43,472 - INFO - GET /earthquakes/ status=200 time=0.083s
+2025-10-28 23:00:44,100 - INFO - GET /earthquakes/ status=200 time=0.088s
+2025-10-28 23:01:44,105 - INFO - GET /earthquakes/ status=200 time=0.177s
+2025-10-28 23:14:49,879 - INFO - GET /docs status=200 time=0.000s
+2025-10-28 23:14:50,130 - INFO - GET /openapi.json status=200 time=0.032s
+2025-10-29 15:59:53,736 - INFO - GET / status=200 time=0.002s
+2025-10-29 15:59:57,121 - INFO - GET /docs status=200 time=0.000s
+2025-10-29 15:59:57,533 - INFO - GET /openapi.json status=200 time=0.014s
