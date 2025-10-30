@@ -16,25 +16,30 @@ cd earthquake-monitor
 
 - Create and activate a virtual environment (venv)
 python -m venv venv
-venv\Scripts\activate # Windows
-# or
-source venv/bin/activate # macOS/Linux
+venv\Scripts\activate (Windows) or source venv/bin/activate (macOS/Linux)
 
 ## Install dependencies
 pip install -r requirements.txt
 
 ## Start PostgreSQL locally
 Make sure service is running (port 5432)
-If needed, create database and user:
-CREATE DATABASE earthquakes;
-CREATE USER eq_user WITH PASSWORD 'password';
-GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
+Create database and user:
+- CREATE DATABASE earthquakes;
+- CREATE USER eq_user WITH PASSWORD 'password';
+- GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
+- \c earthquakes
+- GRANT ALL ON SCHEMA public TO eq_user;
+- ALTER SCHEMA public OWNER TO eq_user;
 
 ## Initialize database schema
-python scripts/init_db.py
+python -m scripts.init_db.py
+
+## (Optional) Add unique constraint to prevent duplicate entries log outputs
+ALTER TABLE earthquakes
+ADD CONSTRAINT unique_quake UNIQUE (location, time);
 
 ## (Optional) Ingest mock data:
-python scripts/ingest_mock_data.py
+python -m scripts.ingest_mock_data.py
 
 ## Run FastAPI app
 uvicorn app.main:app --reload
