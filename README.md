@@ -5,20 +5,27 @@ A simple FastAPI backend service for monitoring data from natural disasters. It 
 ## Features:
 - REST API built with FastAPI
 - Data stored in PostgreSQL
-- Listing of recent earthquakes, filtering by magnitude and date range
-- Fetching specific earthquake details by ID
+- Endpoints to:
+  - Listing of latest earthquakes with pagination, allowing filtering by magnitude and date range
+  - Fetching specific earthquake details by ID
+  - Insert earthquake data
 - Mock data ingestion script to simulate live updates
 
-## Setup:
+## Setup Instructions:
 - Clone the repo:
 git clone https://github.com/carlosfmnunes/earthquake-monitor.git
 cd earthquake-monitor
 
-- Create and activate a virtual environment (venv)
+### 1. Create and activate a virtual environment (venv)
+Windows:
 python -m venv venv
-venv\Scripts\activate (Windows) or source venv/bin/activate (macOS/Linux)
+venv\Scripts\activate (Windows)
 
-## Install dependencies
+macOS/Linux:
+python3 -m venv venv
+source venv/bin/activate (macOS/Linux)
+
+2. Install dependencies
 pip install -r requirements.txt
 
 ## Start PostgreSQL locally
