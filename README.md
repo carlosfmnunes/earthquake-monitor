@@ -17,12 +17,12 @@ A simple FastAPI backend service for monitoring data from natural disasters. It 
 - cd earthquake-monitor
 
 ### 2. Create and activate a virtual environment (venv)
-Windows:
+Windows:  
 python -m venv venv  
 venv\Scripts\activate (Windows)
 
-macOS/Linux:
-python3 -m venv venv
+macOS/Linux:  
+python3 -m venv venv  
 source venv/bin/activate (macOS/Linux)
 
 ### 3. Install dependencies
@@ -30,13 +30,13 @@ pip install -r requirements.txt
 
 ### 4. Start PostgreSQL locally
 Make sure service is running (port 5432)
-Create database and user:
-- CREATE DATABASE earthquakes;
-- CREATE USER eq_user WITH PASSWORD 'password';
-- GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
-- \c earthquakes
-- GRANT ALL ON SCHEMA public TO eq_user;
-- ALTER SCHEMA public OWNER TO eq_user;
+Create database and user:  
+CREATE DATABASE earthquakes;  
+CREATE USER eq_user WITH PASSWORD 'password';  
+GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
+\c earthquakes  
+GRANT ALL ON SCHEMA public TO eq_user;  
+ALTER SCHEMA public OWNER TO eq_user;
 
 ### 5. Initialize database schema
 python -m scripts.init_db.py
