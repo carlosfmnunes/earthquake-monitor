@@ -13,8 +13,9 @@ A simple FastAPI backend service for monitoring data from natural disasters. It 
 
 ## Setup Instructions:
 ### 1. Clone the repo:
-- git clone https://github.com/carlosfmnunes/earthquake-monitor.git
-- cd earthquake-monitor
+\\\bash
+git clone https://github.com/carlosfmnunes/earthquake-monitor.git
+cd earthquake-monitor
 
 ### 2. Create and activate a virtual environment (venv)
 Windows:  
