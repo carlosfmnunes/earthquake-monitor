@@ -89,8 +89,9 @@ def add_earthquake(eq: EarthquakeCreate):
             """
             INSERT INTO earthquakes (location, magnitude, depth, time)
             VALUES (%s, %s, %s, %s)
+            ON CONFLICT (location, time) DO NOTHING
             RETURNING *;
-        """,
+            """,
             (eq.location, eq.magnitude, eq.depth, eq.time),
         )
         new_row = cur.fetchone()
