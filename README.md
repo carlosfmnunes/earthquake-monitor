@@ -18,7 +18,7 @@ A simple FastAPI backend service for monitoring data from natural disasters. It 
 
 ### 2. Create and activate a virtual environment (venv)
 Windows:
-python -m venv venv
+python -m venv venv  
 venv\Scripts\activate (Windows)
 
 macOS/Linux:
