@@ -37,17 +37,72 @@ pip install -r requirements.txt
 ```
 
 
-### 4. Start PostgreSQL locally
-Make sure service is running (port 5432).  
-Create database and user:  
-```bash
-CREATE DATABASE earthquakes;  
-CREATE USER eq_user WITH PASSWORD 'password';  
+### 4. PostgreSQL Installation and Setup Guide
+
+#### Windows
+1. Download and install PostgreSQL from the official installer: https://www.postgresql.org/download/windows/.
+2. During installation, set a password for the default `postgres` user.
+3. Start PostgreSQL from **Start Menu → PostgreSQL → pgAdmin** or **Services**.
+4. Open **pgAdmin** or `psql` command line and execute:
+```
+CREATE DATABASE earthquakes;
+CREATE USER eq_user WITH PASSWORD 'password';
 GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
-\c earthquakes  
-GRANT ALL ON SCHEMA public TO eq_user;  
+\c earthquakes
+GRANT ALL ON SCHEMA public TO eq_user;
 ALTER SCHEMA public OWNER TO eq_user;
 ```
+
+#### macOS
+1. Install via Homebrew (if you don’t have Homebrew, see https://brew.sh):
+```
+brew install postgresql
+```
+2. Start the PostgreSQL service:
+```
+brew services start postgresql
+```
+3. Verify it’s running:
+```
+psql --version
+```
+4. Open `psql` and execute:
+```
+CREATE DATABASE earthquakes;
+CREATE USER eq_user WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
+\c earthquakes
+GRANT ALL ON SCHEMA public TO eq_user;
+ALTER SCHEMA public OWNER TO eq_user;
+```
+
+#### Linux (Ubuntu/Debian)
+1. Install PostgreSQL:
+```
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+```
+2. Start PostgreSQL service:
+```
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+```
+3. Switch to the `postgres` user and access `psql`:
+```
+sudo -i -u postgres
+psql
+```
+4. Execute:
+```
+CREATE DATABASE earthquakes;
+CREATE USER eq_user WITH PASSWORD 'password';
+GRANT ALL PRIVILEGES ON DATABASE earthquakes TO eq_user;
+\c earthquakes
+GRANT ALL ON SCHEMA public TO eq_user;
+ALTER SCHEMA public OWNER TO eq_user;
+```
+
+
 
 
 
@@ -58,7 +113,7 @@ python -m scripts.init_db.py
 
 
 ### 6. (Optional) Add unique constraint to prevent duplicate entries log outputs
-```bash
+```sql
 ALTER TABLE earthquakes  
 ADD CONSTRAINT unique_eq UNIQUE (location, time);
 ```
