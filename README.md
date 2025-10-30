@@ -1,4 +1,4 @@
-##Earthquake Monitoring API
+## Earthquake Monitoring API
 
 A simple FastAPI backend service for monitoring data from natural disasters. It ingests earthquake information from mock data, stores it in PostgreSQL and exposes it via REST API.
 
