@@ -1,4 +1,4 @@
-Earthquake Monitoring API
+##Earthquake Monitoring API
 
 A simple FastAPI backend service for monitoring data from natural disasters. It ingests earthquake information from mock data, stores it in PostgreSQL and exposes it via REST API.
 
@@ -12,9 +12,9 @@ A simple FastAPI backend service for monitoring data from natural disasters. It 
 - Mock data ingestion script to simulate live updates
 
 ## Setup Instructions:
-- Clone the repo:
-git clone https://github.com/carlosfmnunes/earthquake-monitor.git
-cd earthquake-monitor
+Clone the repo:
+- git clone https://github.com/carlosfmnunes/earthquake-monitor.git
+- cd earthquake-monitor
 
 ### 1. Create and activate a virtual environment (venv)
 Windows:
