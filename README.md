@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 
 ### 4. Start PostgreSQL locally
-Make sure service is running (port 5432)
+Make sure service is running (port 5432).
 Create database and user:  
 ```bash
 CREATE DATABASE earthquakes;  
