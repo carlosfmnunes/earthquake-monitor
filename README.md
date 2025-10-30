@@ -25,10 +25,10 @@ macOS/Linux:
 python3 -m venv venv
 source venv/bin/activate (macOS/Linux)
 
-2. Install dependencies
+### 2. Install dependencies
 pip install -r requirements.txt
 
-## Start PostgreSQL locally
+### 3. Start PostgreSQL locally
 Make sure service is running (port 5432)
 Create database and user:
 - CREATE DATABASE earthquakes;
@@ -38,17 +38,17 @@ Create database and user:
 - GRANT ALL ON SCHEMA public TO eq_user;
 - ALTER SCHEMA public OWNER TO eq_user;
 
-## Initialize database schema
+### 4. Initialize database schema
 python -m scripts.init_db.py
 
-## (Optional) Add unique constraint to prevent duplicate entries log outputs
+### 5. (Optional) Add unique constraint to prevent duplicate entries log outputs
 ALTER TABLE earthquakes
 ADD CONSTRAINT unique_quake UNIQUE (location, time);
 
-## (Optional) Ingest mock data:
+### 6. (Optional) Ingest mock data:
 python -m scripts.ingest_mock_data.py
 
-## Run FastAPI app
+### 7. Run FastAPI app
 uvicorn app.main:app --reload
 
 API avaiable at: http://127.0.0.1:8000
