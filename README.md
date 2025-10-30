@@ -22,13 +22,13 @@ cd earthquake-monitor
 Windows:  
 ```bash
 python -m venv venv  
-venv\Scripts\activate (Windows)
+venv\Scripts\activate
 ```
 macOS/Linux:
 
 ```bash
 python3 -m venv venv  
-source venv/bin/activate (macOS/Linux)
+source venv/bin/activate
 ```
 
 ### 3. Install dependencies
@@ -60,7 +60,7 @@ python -m scripts.init_db.py
 ### 6. (Optional) Add unique constraint to prevent duplicate entries log outputs
 ```bash
 ALTER TABLE earthquakes  
-ADD CONSTRAINT unique_quake UNIQUE (location, time);
+ADD CONSTRAINT unique_eq UNIQUE (location, time);
 ```
 
 
@@ -80,12 +80,12 @@ API avaiable at: http://127.0.0.1:8000
 Swagger docs: http://127.0.0.1:8000/docs
 
 ## Design decisions:
-Pydantic models EarthquakeCreate and EarthquakeRead for separate input/output schemas  
-Request logging implemented via middleware  
-PostgreSQL storage  
-SQL queries isolated in queries.py for maintainability  
+- Pydantic models EarthquakeCreate and EarthquakeRead for separate input/output schemas  
+- Request logging implemented via middleware  
+- PostgreSQL storage  
+- SQL queries isolated in queries.py for maintainability  
 
 ## Improvements (Future Work)
-Use connection pooling  
-Replace hardcoded DB credentials with environment variables  
-Implement real USGS API ingestion  
+- Use connection pooling  
+- Replace hardcoded DB credentials with environment variables  
+- Implement real USGS API ingestion  
