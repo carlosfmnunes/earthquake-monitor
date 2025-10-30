@@ -12,11 +12,11 @@ A simple FastAPI backend service for monitoring data from natural disasters. It 
 - Mock data ingestion script to simulate live updates
 
 ## Setup Instructions:
-Clone the repo:
+### 1. Clone the repo:
 - git clone https://github.com/carlosfmnunes/earthquake-monitor.git
 - cd earthquake-monitor
 
-### 1. Create and activate a virtual environment (venv)
+### 2. Create and activate a virtual environment (venv)
 Windows:
 python -m venv venv
 venv\Scripts\activate (Windows)
@@ -25,10 +25,10 @@ macOS/Linux:
 python3 -m venv venv
 source venv/bin/activate (macOS/Linux)
 
-### 2. Install dependencies
+### 3. Install dependencies
 pip install -r requirements.txt
 
-### 3. Start PostgreSQL locally
+### 4. Start PostgreSQL locally
 Make sure service is running (port 5432)
 Create database and user:
 - CREATE DATABASE earthquakes;
@@ -38,17 +38,17 @@ Create database and user:
 - GRANT ALL ON SCHEMA public TO eq_user;
 - ALTER SCHEMA public OWNER TO eq_user;
 
-### 4. Initialize database schema
+### 5. Initialize database schema
 python -m scripts.init_db.py
 
-### 5. (Optional) Add unique constraint to prevent duplicate entries log outputs
+### 6. (Optional) Add unique constraint to prevent duplicate entries log outputs
 ALTER TABLE earthquakes
 ADD CONSTRAINT unique_quake UNIQUE (location, time);
 
-### 6. (Optional) Ingest mock data:
+### 7. (Optional) Ingest mock data:
 python -m scripts.ingest_mock_data.py
 
-### 7. Run FastAPI app
+### 8. Run FastAPI app
 uvicorn app.main:app --reload
 
 API avaiable at: http://127.0.0.1:8000
