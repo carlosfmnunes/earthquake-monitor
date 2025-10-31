@@ -138,9 +138,10 @@ Swagger docs: http://127.0.0.1:8000/docs
 - Pydantic models EarthquakeCreate and EarthquakeRead for separate input/output schemas  
 - Request logging implemented via middleware  
 - PostgreSQL storage  
-- SQL queries isolated in queries.py for maintainability  
+- SQL queries isolated in queries.py for maintainability
 
 ## Improvements (Future Work)
 - Use connection pooling  
 - Replace hardcoded DB credentials with environment variables  
-- Implement real USGS API ingestion  
+- Implement real USGS API ingestion
+- Consider handling timezone values in case of project expansion and data fetching from multiple sources
